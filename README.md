@@ -1,0 +1,2 @@
+# pytransliteration
+Python transliteration library (mostly from non-latin scripts, such as Arabic, Japanese, etc.)
