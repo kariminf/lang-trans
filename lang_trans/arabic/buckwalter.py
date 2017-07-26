@@ -103,8 +103,3 @@ class Buckwalter(Transliteration):
 
 		return res
 
-
-if __name__ == '__main__':
-	from buckwalter import Buckwalter
-	print Buckwalter.translaterate(u'هذا البرنامج يعطينا نطق الحروف')
-	print Buckwalter.untranslaterate('h*A AlbrnAmj yETynA nTq AlHrwf')
