@@ -1,10 +1,10 @@
 # pyTransliteration
 
 [![Project](https://img.shields.io/badge/Project-pyTransliteration-0BDA51.svg?style=plastic)](https://github.com/kariminf/pytransliteration)
-[![PyPI](https://img.shields.io/pypi/v/lang-trans.svg?style=plastic)](https://pypi.python.org/pypi/lang-trans)
-[![Version](https://img.shields.io/badge/Version-0.1.0-0BDA51.svg?style=plastic)](https://github.com/kariminf/pytransliteration/releases)
 [![License](https://img.shields.io/badge/License-Apache_2-0BDA51.svg?style=plastic)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Travis](https://img.shields.io/travis/kariminf/ArArud.svg?style=plastic)](https://travis-ci.org/kariminf/pytransliteration)
+[![PyPI](https://img.shields.io/pypi/v/lang-trans.svg?style=plastic)](https://pypi.python.org/pypi/lang-trans)
+[![Travis](https://img.shields.io/travis/kariminf/lang-trans.svg?style=plastic)](https://travis-ci.org/kariminf/pytransliteration)
+[![Codecov](https://img.shields.io/codecov/c/github/kariminf/lang-trans.svg?style=plastic)](https://codecov.io/gh/kariminf/lang-trans)
 
 Python transliteration library (mostly from non-latin scripts, such as Arabic, Japanese, etc.)
 
