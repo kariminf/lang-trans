@@ -8,7 +8,6 @@ python:
 
 install:
   - pip install -r requirements.txt
-  - pip install pypandoc
   - pip install pytest
   - pip install codecov
   - pip install pytest-cov

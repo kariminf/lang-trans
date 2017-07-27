@@ -1,15 +1,16 @@
 import os
 from setuptools import setup
 
-try:
-    import pypandoc
-    long_description = pypandoc.convert('README.md', 'rst')
-except(IOError, ImportError):
-    long_description = open('README.md').read()
+def readme():
+    try:
+        with open('README.rst') as f:
+            return f.read()
+    except IOError:
+        return ''
 
 setup(
     name = "lang-trans",
-    version = "0.2.1",
+    version = "0.2.2",
     author = "Abdelkrime Aries",
     author_email = "kariminfo0@gmail.com",
     description = ("Python transliteration library"),
@@ -17,5 +18,5 @@ setup(
     keywords = "transliteration nlp languages romanization",
     url = "https://github.com/kariminf/lang-trans",
     packages=['lang_trans', 'lang_trans.arabic'],
-    long_description=long_description
+    long_description=readme()
 )
