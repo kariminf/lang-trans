@@ -1,16 +1,24 @@
 sudo: false
+
 language: python
+
 python:
-- '2.7'
-- '3.4'
+  - '2.7'
+  - '3.4'
+
 install:
-- pip install -r requirements.txt
-- pip install pytest
-- pip install pytest-cov
+  - pip install -r requirements.txt
+  - pip install pypandoc
+  - pip install pytest
+  - pip install codecov
+  - pip install pytest-cov
+
 script:
-- py.test --cov=./ tests/ar_buckwalter_t.py
+  - py.test --cov=lang_trans tests/ar_buckwalter_t.py
+
 after_success:
-- codecov
+  - codecov
+
 deploy:
   provider: pypi
   user: kariminf
