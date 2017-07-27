@@ -6,3 +6,35 @@
 [![Travis](https://img.shields.io/travis/kariminf/ArArud.svg?style=plastic)](https://travis-ci.org/kariminf/pytransliteration)
 
 Python transliteration library (mostly from non-latin scripts, such as Arabic, Japanese, etc.)
+
+## Use
+
+Here an example of using Buckwalter transliteration for Arabic:
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from lang_trans.arabic.buckwalter import Buckwalter
+
+trans = Buckwalter()
+
+print trans.transliterate(u'هذا البرنامج يعطينا نطق الحروف')
+print trans.untransliterate('h*A AlbrnAmj yETynA nTq AlHrwf')
+```
+
+
+## License
+
+Copyright (C) 2017 Abdelkrime Aries (kariminfo0@gmail.com)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

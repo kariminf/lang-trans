@@ -1,15 +1,18 @@
 sudo: false
-
 language: python
-
 python:
-  - "2.7"
-  - "3.4"
-
+- '2.7'
+- '3.4'
 install:
-  - pip install -r requirements.txt
-  - pip install pytest
-
+- pip install -r requirements.txt
+- pip install pytest
+- pip install pytest-cov
 script:
-  - pytest tests/ar_buckwalter_t.py
-
+- py.test --cov=./ tests/ar_buckwalter_t.py
+after_success:
+- codecov
+deploy:
+  provider: pypi
+  user: kariminf
+  password:
+    secure: IIEmrG4Df7BSUuAzC/vVoPd6LlL0kQOpSO2YpJdXUkxC4lCzZRYY8HSWfOFBRmgETz5QIkADbO0Y8CHZWNLCC5xERA+6KO/2a4RHALv3n21ck+8XxnzkCGfomyBr9AYTYK8D/O58qLKYdfMDkoD3qKxCGR9kuwR6Wof0Yr9G+WdhRBoKbOfJR5n4VRM2GGR+GHkIQD2Sdd5pZQSVt+kx7EUad3UI1DwZExXdlwZhd1tgEe+1TsrZoai44OuJjyUEjqd1L2jMq6EB/90vWa2fs56KY9W4KEa0kPnuYNoww5migrSbukNs0knDB/QF4fNSG/4F2C70Fvx8dBpLVRjwovIChyvkavu0YC4lOx1CFlGD3MKCB4CQmmKo5iPxemZV6rk5xaQ2/+2kh4r+cdBGmeH930lf+naHTj30xHvT724tSNbQzuwTBmzQcm/AmlVn4IV9YfOkjPal4udeEiEvIDnGKO4y47TtWAbY8KtJ1wQrrZknWPm+nCBAQ3pvFhLzpX+Nsd1qoX+dqItFAVIhhHSmRm8vInkoDPrDYgFwAHX/3p2TSG7PQdTwVxhEG/YRxbHwAhEhWZmyClOaxWCwCbjBTdqp8Cd0i4AAdCLuWCGn66uE2dkQbrWgMfrrBaGOcozDeerN+UziPLmTsG2EFZj1uUxCUpkL91aftrb9BbM=

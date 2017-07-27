@@ -22,7 +22,6 @@
 # limitations under the License.
 #
 
-
 trans =	{
 		u"\u0627": "A", # alif
 		u"\u0628": "b", # ba
@@ -77,7 +76,7 @@ trans =	{
 		u"\u0652": "o", # sukun
 }
 
-from lang_trans.transliteration import Transliteration
+from lang_trans.trans import Transliteration
 
 class Buckwalter(Transliteration):
 
@@ -91,7 +90,7 @@ class Buckwalter(Transliteration):
 				res += trans.get(char, char)
 		else:
 			res = word
-			for k,v in trans.iteritems():
+			for k,v in trans.items():
 				res = res.replace(k, v)
 
 		return res
@@ -102,4 +101,3 @@ class Buckwalter(Transliteration):
 			res = res.replace(v, k)
 
 		return res
-
