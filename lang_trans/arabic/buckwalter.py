@@ -97,7 +97,7 @@ class Buckwalter(Transliteration):
 
 	def untransliterate(self, word):
 		res = word
-		for k,v in trans.iteritems():
+		for k,v in trans.items():
 			res = res.replace(v, k)
 
 		return res
