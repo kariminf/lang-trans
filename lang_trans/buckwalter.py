@@ -4,10 +4,10 @@
 #  buckwalter.py
 #  A  class to handle buckwalter translateration
 #
-#  Copyright 2015 Abdelkrime Aries <kariminfo0@gmail.com>
+#  Copyright 2017 Abdelkrime Aries <kariminfo0@gmail.com>
 #
 #  ---- AUTHORS ----
-#  2015	Abdelkrime Aries <kariminfo0@gmail.com>
+#  2017	Abdelkrime Aries <kariminfo0@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

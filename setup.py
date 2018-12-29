@@ -10,7 +10,7 @@ def readme():
 
 setup(
     name = "lang-trans",
-    version = "0.2.2",
+    version = "0.3.0",
     author = "Abdelkrime Aries",
     author_email = "kariminfo0@gmail.com",
     description = ("Python transliteration library"),

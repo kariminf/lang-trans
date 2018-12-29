@@ -1,9 +1,8 @@
-# pyTransliteration
+# lang-trans
 
-[![Project](https://img.shields.io/badge/Project-pyTransliteration-0BDA51.svg?style=plastic)](https://github.com/kariminf/pytransliteration)
 [![License](https://img.shields.io/badge/License-Apache_2-0BDA51.svg?style=plastic)](http://www.apache.org/licenses/LICENSE-2.0)
 [![PyPI](https://img.shields.io/pypi/v/lang-trans.svg?style=plastic)](https://pypi.python.org/pypi/lang-trans)
-[![Travis](https://img.shields.io/travis/kariminf/lang-trans.svg?style=plastic)](https://travis-ci.org/kariminf/pytransliteration)
+[![Travis](https://img.shields.io/travis/kariminf/lang-trans.svg?style=plastic)](https://travis-ci.org/kariminf/lang-trans)
 [![Codecov](https://img.shields.io/codecov/c/github/kariminf/lang-trans.svg?style=plastic)](https://codecov.io/gh/kariminf/lang-trans)
 
 Python transliteration library (mostly from non-latin scripts, such as Arabic, Japanese, etc.)
@@ -22,6 +21,9 @@ trans = Buckwalter()
 print trans.transliterate(u'هذا البرنامج يعطينا نطق الحروف')
 print trans.untransliterate('h*A AlbrnAmj yETynA nTq AlHrwf')
 ```
+
+
+## Similar projects
 
 
 ## License
