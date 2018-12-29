@@ -4,10 +4,10 @@
 #  buckwalter.py
 #  A  class to handle hepburn translateration
 #
-#  Copyright 2017-2018 Abdelkrime Aries <kariminfo0@gmail.com>
+#  Copyright 2018 Abdelkrime Aries <kariminfo0@gmail.com>
 #
 #  ---- AUTHORS ----
-#  2017-2018	Abdelkrime Aries <kariminfo0@gmail.com>
+#  2018	Abdelkrime Aries <kariminfo0@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -195,7 +195,7 @@ hepburn = [
 
 from lang_trans import Transliteration
 
-class HepBurn(Transliteration):
+class Hepburn(Transliteration):
 
 	def __init__(self):
 		pass
@@ -219,4 +219,4 @@ class HepBurn(Transliteration):
 
 		return res
 
-hepburn = HepBurn()
+hepburn = Hepburn()
