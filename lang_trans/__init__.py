@@ -4,10 +4,10 @@
 #  transliteration.py
 #  An abstract class  for language transliteration
 #
-#  Copyright 2017 Abdelkrime Aries <kariminfo0@gmail.com>
+#  Copyright 2017-2018 Abdelkrime Aries <kariminfo0@gmail.com>
 #
 #  ---- AUTHORS ----
-#  2017	Abdelkrime Aries <kariminfo0@gmail.com>
+#  2017-2018	Abdelkrime Aries <kariminfo0@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -35,9 +35,15 @@ class Transliteration(ABC):
 	def __init__(self):
 		pass
 
+    def trans(self, word):
+        return self.transliterate(word)
+
 	@abc.abstractmethod
 	def transliterate(self, word):
 		return word
+
+    def untrans(self, word):
+        return self.untransliterate(word)
 
 	@abc.abstractmethod
 	def untransliterate(self, word):

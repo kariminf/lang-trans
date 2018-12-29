@@ -4,10 +4,10 @@
 #  buckwalter.py
 #  A  class to handle hepburn translateration
 #
-#  Copyright 2017 Abdelkrime Aries <kariminfo0@gmail.com>
+#  Copyright 2017-2018 Abdelkrime Aries <kariminfo0@gmail.com>
 #
 #  ---- AUTHORS ----
-#  2017	Abdelkrime Aries <kariminfo0@gmail.com>
+#  2017-2018	Abdelkrime Aries <kariminfo0@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -218,3 +218,5 @@ class HepBurn(Transliteration):
 			res = res.replace(v, k)
 
 		return res
+
+hepburn = HepBurn()

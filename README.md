@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2-0BDA51.svg?style=plastic)](http://www.apache.org/licenses/LICENSE-2.0)
 [![PyPI](https://img.shields.io/pypi/v/lang-trans.svg?style=plastic)](https://pypi.python.org/pypi/lang-trans)
+![Downloads](https://img.shields.io/pypi/dm/lang-trans.svg?style=plastic)
 [![Travis](https://img.shields.io/travis/kariminf/lang-trans.svg?style=plastic)](https://travis-ci.org/kariminf/lang-trans)
 [![Codecov](https://img.shields.io/codecov/c/github/kariminf/lang-trans.svg?style=plastic)](https://codecov.io/gh/kariminf/lang-trans)
 

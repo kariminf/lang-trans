@@ -17,6 +17,6 @@ setup(
     license = "Apache-2.0",
     keywords = "transliteration nlp languages romanization",
     url = "https://github.com/kariminf/lang-trans",
-    packages=['lang_trans', 'lang_trans.arabic'],
+    packages=['lang_trans'],
     long_description=readme()
 )
