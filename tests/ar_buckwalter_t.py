@@ -27,7 +27,7 @@ import pytest
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from lang_trans.arabic.buckwalter import Buckwalter
+from lang_trans.arabic import Buckwalter
 
 ORIG = u'هذا البرنامج يعطينا نطق الحروف'
 TRANS = 'h*A AlbrnAmj yETynA nTq AlHrwf'

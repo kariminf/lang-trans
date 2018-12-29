@@ -193,7 +193,7 @@ hepburn = [
   ];
 
 
-from lang_trans.trans import Transliteration
+from lang_trans import Transliteration
 
 class HepBurn(Transliteration):
 

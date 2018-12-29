@@ -14,7 +14,7 @@ Here an example of using Buckwalter transliteration for Arabic:
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from lang_trans.arabic.buckwalter import Buckwalter
+from lang_trans.arabic import Buckwalter
 
 trans = Buckwalter()
 
