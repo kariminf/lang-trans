@@ -20,12 +20,16 @@ Here an example of using Buckwalter transliteration for Arabic:
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
 
-    from lang_trans.arabic.buckwalter import Buckwalter
+    from lang_trans.arabic import buckwalter
 
-    trans = Buckwalter()
+    print buckwalter.trans(u'هذا البرنامج يعطينا نطق الحروف')
+    print buckwalter.untrans('h*A AlbrnAmj yETynA nTq AlHrwf')
 
-    print trans.transliterate(u'هذا البرنامج يعطينا نطق الحروف')
-    print trans.untransliterate('h*A AlbrnAmj yETynA nTq AlHrwf')
+- arabic
+  - buckwalter
+
+- japanese
+  - hepburn
 
 License
 -------
