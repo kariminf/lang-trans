@@ -23,45 +23,45 @@
 #
 
 buckwalter_map =	{
-		u"\u0627": "A", # alif
-		u"\u0628": "b", # ba
-		u"\u062A": "t", # ta
-		u"\u062B": "v", # tha
-		u"\u062C": "j", # jim
-		u"\u062D": "H", # Ḥa
-		u"\u062E": "x", # kha
-		u"\u062F": "d", # dal
-		u"\u0630": "*", # dhal
-		u"\u0631": "r", # ra
-		u"\u0632": "z", # zin
-		u"\u0633": "s", # sin
-		u"\u0634": "$", # shin
-		u"\u0635": "S", # ṣad
-		u"\u0636": "D", # Ḍad
-		u"\u0637": "T", # Ṭa
-		u"\u0638": "Z", # Ẓa
-		u"\u0639": "E", # 'Ayn
-		u"\u063A": "g", # ghayn
-		u"\u0641": "f", # fa
-		u"\u0642": "q", # qaf
-		u"\u0643": "k", # kaf
-		u"\u0644": "l", # lam
-		u"\u0645": "m", # mim
-		u"\u0646": "n", # nun
-		u"\u0647": "h", # ha
-		u"\u0648": "w", # waw
-		u"\u064A": "y", # ya
+		u"ا": "A", # alif
+		u"ب": "b", # ba
+		u"ت": "t", # ta
+		u"ث": "v", # tha
+		u"ج": "j", # jim
+		u"ح": "H", # Ḥa
+		u"خ": "x", # kha
+		u"د": "d", # dal
+		u"ذ": "*", # dhal
+		u"ر": "r", # ra
+		u"ز": "z", # zin
+		u"س": "s", # sin
+		u"ش": "$", # shin
+		u"ص": "S", # ṣad
+		u"ض": "D", # Ḍad
+		u"ط": "T", # Ṭa
+		u"ظ": "Z", # Ẓa
+		u"ع": "E", # 'Ayn
+		u"غ": "g", # ghayn
+		u"ف": "f", # fa
+		u"ق": "q", # qaf
+		u"ك": "k", # kaf
+		u"ل": "l", # lam
+		u"م": "m", # mim
+		u"ن": "n", # nun
+		u"ه": "h", # ha
+		u"و": "w", # waw
+		u"ي": "y", # ya
 		#hamza
-		u"\u0621": "'", # lone hamza
-		u"\u0623": ">", # hamza on alif
-		u"\u0625": "<", # hamza below alif
-		u"\u0624": "&", # hamza on waw
-		u"\u0626": "}", # hamza on ya
+		u"ء": "'", # lone hamza
+		u"أ": ">", # hamza on alif
+		u"إ": "<", # hamza below alif
+		u"ؤ": "&", # hamza on waw
+		u"ئ": "}", # hamza on ya
 		#alif
-		u"\u0622": "|", # madda on alif
-		u"\u0671": "{", # alif alwasla
+		u"آ": "|", # madda on alif
+		u"ٱ": "{", # alif alwasla
 		u"\u0670": "`", # dagger alif
-		u"\u0649": "Y", # alif maqsura
+		u"ى": "Y", # alif maqsura
 		#harakat
 		u"\u064E": "a", # fatha
 		u"\u064F": "u", # Damma
@@ -72,8 +72,52 @@ buckwalter_map =	{
 		u"\u0651": "~", # shadda
 		u"\u0640": "_", # tatwil
 		#others
-		u"\u0629": "p", # ta marbuta
+		u"ة": "p", # ta marbuta
 		u"\u0652": "o", # sukun
+}
+
+
+iso233_map =	{
+		u"ا": "ʾ", # alif
+		u"ب": "b", # ba
+		u"ت": "t", # ta
+		u"ث": "ṯ", # tha
+		u"ج": "ǧ", # jim
+		u"ح": "ḥ", # Ḥa
+		u"خ": "ẖ", # kha
+		u"د": "d", # dal
+		u"ذ": "ḏ", # dhal
+		u"ر": "r", # ra
+		u"ز": "z", # zin
+		u"س": "s", # sin
+		u"ش": "š", # shin
+		u"ص": "ṣ", # ṣad
+		u"ض": "ḍ", # Ḍad
+		u"ط": "ṭ", # Ṭa
+		u"ظ": "ẓ", # Ẓa
+		u"ع": "ʿ", # 'Ayn
+		u"غ": "ġ", # ghayn
+		u"ف": "f", # fa
+		u"ق": "q", # qaf
+		u"ك": "k", # kaf
+		u"ل": "l", # lam
+		u"م": "m", # mim
+		u"ن": "n", # nun
+		u"ه": "h", # ha
+		u"و": "w", # waw
+		u"ي": "y", # ya
+		#hamza
+		u"ء": "ˌ", # lone hamza
+		u"أ": "ˈ", # hamza on alif
+		u"إ": "ʾ", # hamza below alif
+		u"ؤ": "ˈ", # hamza on waw
+		u"ئ": "ˈ", # hamza on ya
+		#alif
+		u"\u0622": "ʾ", # madda on alif
+		u"\u0671": "ʾ", # alif alwasla
+		u"\u0670": "ʾ", # dagger alif
+		u"ى": "ỳ", # alif maqsura
+		u"ة": "ẗ", # ta marbuta
 }
 
 arabic = [
@@ -196,3 +240,10 @@ class ArabTex(L2LTrans):
 		L2LTrans.__init__(self, arabic, arabtex_tab)
 
 arabtex = ArabTex()
+
+class Iso233(MapTrans):
+
+	def __init__(self):
+		MapTrans.__init__(self, iso233_map)
+
+iso233 = Iso233()
