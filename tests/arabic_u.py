@@ -33,7 +33,7 @@ ORIG = u'هذا البرنامج يعطينا نطق الحروف'
 BUCKWALTER = 'h*A AlbrnAmj yETynA nTq AlHrwf'
 ARABTEX = 'h_dA AlbrnAmj y`.tynA n.tq Al.hrwf'
 ISO233 = u'hḏʾ ʾlbrnʾmǧ yʿṭynʾ nṭq ʾlḥrwf'
-ORIG_iso233 = u'هذٱ ٱلبرنٱمج يعطينٱ نطق ٱلحروف'
+ORIG_iso233 = u'هذا البرنامج يعطينا نطق الحروف'
 
 def test_buckwalter_trans():
 	assert buckwalter.trans(ORIG) == BUCKWALTER

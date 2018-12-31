@@ -246,4 +246,8 @@ class Iso233(MapTrans):
 	def __init__(self):
 		MapTrans.__init__(self, iso233_map)
 
+	def untransliterate(self, word):
+		res = word.replace(u"ˈ", u"أ").replace(u"ʾ", u"ا")
+		return MapTrans.untransliterate(self, res)
+
 iso233 = Iso233()

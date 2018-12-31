@@ -1,25 +1,19 @@
 sudo: false
-
 language: python
-
 python:
-  - '2.7'
-  - '3.6'
-
+- '2.7'
+- '3.6'
 install:
-  - pip install -r requirements.txt
-  - pip install pytest
-  - pip install codecov
-  - pip install pytest-cov
-
+- pip install -r requirements.txt
+- pip install pytest
+- pip install codecov
+- pip install pytest-cov
 script:
-  - py.test --cov=lang_trans tests/*_u.py
-
+- py.test --cov=lang_trans tests/*_u.py
 after_success:
-  - codecov
-
+- codecov
 deploy:
   provider: pypi
   user: kariminf
   password:
-    secure: IIEmrG4Df7BSUuAzC/vVoPd6LlL0kQOpSO2YpJdXUkxC4lCzZRYY8HSWfOFBRmgETz5QIkADbO0Y8CHZWNLCC5xERA+6KO/2a4RHALv3n21ck+8XxnzkCGfomyBr9AYTYK8D/O58qLKYdfMDkoD3qKxCGR9kuwR6Wof0Yr9G+WdhRBoKbOfJR5n4VRM2GGR+GHkIQD2Sdd5pZQSVt+kx7EUad3UI1DwZExXdlwZhd1tgEe+1TsrZoai44OuJjyUEjqd1L2jMq6EB/90vWa2fs56KY9W4KEa0kPnuYNoww5migrSbukNs0knDB/QF4fNSG/4F2C70Fvx8dBpLVRjwovIChyvkavu0YC4lOx1CFlGD3MKCB4CQmmKo5iPxemZV6rk5xaQ2/+2kh4r+cdBGmeH930lf+naHTj30xHvT724tSNbQzuwTBmzQcm/AmlVn4IV9YfOkjPal4udeEiEvIDnGKO4y47TtWAbY8KtJ1wQrrZknWPm+nCBAQ3pvFhLzpX+Nsd1qoX+dqItFAVIhhHSmRm8vInkoDPrDYgFwAHX/3p2TSG7PQdTwVxhEG/YRxbHwAhEhWZmyClOaxWCwCbjBTdqp8Cd0i4AAdCLuWCGn66uE2dkQbrWgMfrrBaGOcozDeerN+UziPLmTsG2EFZj1uUxCUpkL91aftrb9BbM=
+    secure: MWZhRrCG5S0vJVj2jBSr2enVMOYvV4dKklfCYT5e9F06o7OGUWgDszG3YWzjfbYT8CYmTTqA0wSo5oGJpj8dr+JGs7s9s9ZD8cqryYViE/P0guK1HY7EOu/icDm6Yoml1e5G/EBOyR8/YJ5fYQT3407lFvjJvDc6oRKFsEvvNQRLCOwS3ATNPbe5urXSI9YmhThJfuLMGa07d89GZAkFsFZK9sNZRbDxv3OwRcltNYlT0ohEryKYxVvOOLPyMyuja38ot+Eph868o84H8eF9/iW4ig+VxT8D9hJO9b0QVlHgnZKTILKTPT0+iE/9T1ES8HpRoh83XhN8toZJDocs7R4Y38AKxIUwkxYJtQ0pV1OAy6kwNYhyMGf72R4vS+HgyYQWFpcJ2UUbSdFhUf1N+nNwzzd6No/+Y3HBSuqoeiZOYXxAEpdGkqY1kaoLhwY2tQt6UbKDKMvvE8mROKlFv/+dLI5w65A5K0wTqeUBkDZ4hlE3zkwkr+bHd6WiKlqXF7x2B/6esEdiSKBLR083CgneTWV/RPpmuZ/8fjlEaUbdAvvGZl31TA5LziB6SZaswnWTGggnDOaayeT5awSpE+Qah/S0XJn2bT++oQipTCLlMZAFDhcPVEcas8ynPXhklXTKpIXm/ly6csH9DLnaLZ1gbqIDHx4/GBR3THAhxxA=
