@@ -76,11 +76,11 @@ trans_map =	{
 		u"\u0652": "o", # sukun
 }
 
-from lang_trans import MapTransliterator
+from lang_trans import MapTrans
 
-class Buckwalter(MapTransliterator):
+class Buckwalter(MapTrans):
 
 	def __init__(self):
-		MapTransliterator.__init__(self, trans_map)
+		MapTrans.__init__(self, trans_map)
 
 buckwalter = Buckwalter()

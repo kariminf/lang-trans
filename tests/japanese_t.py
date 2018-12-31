@@ -31,9 +31,10 @@ from lang_trans.japanese import hepburn
 
 ORIG = u'じゃしゃしんいっぱい'
 TRANS = 'jashashinippai'
+UNTRANS = u'じゃしゃしにっぱい'
 
 def test_transliterate():
-    assert hepburn.transliterate(ORIG) == TRANS
+	assert hepburn.trans(ORIG) == TRANS
 
 def test_untransliterate():
-    assert hepburn.untransliterate(TRANS) == ORIG
+	assert hepburn.untrans(TRANS) == UNTRANS

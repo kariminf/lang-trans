@@ -27,11 +27,11 @@ import sys
 import abc
 
 if sys.version_info >= (3, 4):
-    ABC = abc.ABC
+	ABC = abc.ABC
 else:
-    ABC = abc.ABCMeta('ABC', (), {})
+	ABC = abc.ABCMeta('ABC', (), {})
 
-class Transliterator(ABC):
+class Trans(ABC):
 
 	def __init__(self):
 		pass
@@ -50,12 +50,12 @@ class Transliterator(ABC):
 	def untransliterate(self, word):
 		return word
 
-class MapTransliterator(Transliterator):
+class MapTrans(Trans):
 
-    def __init__(self, the_map):
+	def __init__(self, the_map):
 		self.the_map = the_map
 
-    def transliterate(self, word):
+	def transliterate(self, word):
 		res = ""
 		if len(word) < len(self.the_map):
 			for char in word:
@@ -67,27 +67,28 @@ class MapTransliterator(Transliterator):
 
 		return res
 
-    def untransliterate(self, word):
+	def untransliterate(self, word):
 		res = word
 		for k,v in self.the_map.items():
 			res = res.replace(v, k)
 
 		return res
 
-class List2ListTransliterator(Transliterator):
 
-    def __init__(self, src, dst):
+class L2LTrans(Trans):
+
+	def __init__(self, src, dst):
 		self.src = src
-        self.dst = dst
+		self.dst = dst
 
-    def transliterate(self, word):
+	def transliterate(self, word):
 		res = word
-        for i, v in enumerate(self.src):
-            res = res.replace(v, self.dst[i])
+		for i, v in enumerate(self.src):
+			res = res.replace(v, self.dst[i])
 		return res
 
-    def untransliterate(self, word):
+	def untransliterate(self, word):
 		res = word
 		for i, v in enumerate(self.dst):
-            res = res.replace(v, self.src[i])
+			res = res.replace(v, self.src[i])
 		return res
