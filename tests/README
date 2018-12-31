@@ -1,3 +1,3 @@
 use pytest and not python
 
->> pytest ar_buckwalter_t.py
+>> pytest arabic_u.py

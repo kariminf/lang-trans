@@ -33,26 +33,26 @@ BUCKWALTER = 'h*A AlbrnAmj yETynA nTq AlHrwf'
 ARABTEX = 'h_dA AlbrnAmj y`.tynA n.tq Al.hrwf'
 ISO233 = u'hḏʾ ʾlbrnʾmǧ yʿṭynʾ nṭq ʾlḥrwf'
 
-print "buckwalter trans of: " + ORIG
-print buckwalter.trans(ORIG)
-print
+print ("buckwalter trans of: " + ORIG)
+print (buckwalter.trans(ORIG))
+print  ("")
 
-print "buckwalter untrans of: " + BUCKWALTER
-print buckwalter.untrans(BUCKWALTER)
-print
+print ("buckwalter untrans of: " + BUCKWALTER)
+print (buckwalter.untrans(BUCKWALTER))
+print ("")
 
-print "arabtex trans of: " + ORIG
-print arabtex.trans(ORIG)
-print
+print ("arabtex trans of: " + ORIG)
+print (arabtex.trans(ORIG))
+print ("")
 
-print "arabtex untrans of: " + ARABTEX
-print arabtex.untrans(ARABTEX)
-print
+print ("arabtex untrans of: " + ARABTEX)
+print (arabtex.untrans(ARABTEX))
+print ("")
 
-print "iso233 trans of: " + ORIG
-print iso233.trans(ORIG)
-print
+print ("iso233 trans of: " + ORIG)
+print (iso233.trans(ORIG))
+print ("")
 
-print "iso233 untrans of: " + ISO233
-print iso233.untrans(ISO233)
-print
+print ("iso233 untrans of: " + ISO233)
+print (iso233.untrans(ISO233))
+print ("")

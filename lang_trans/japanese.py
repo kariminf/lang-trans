@@ -192,19 +192,19 @@ trans_tab = [ # https://en.wikipedia.org/wiki/Hepburn_romanization
 ]
 
 loneUnTrans = {
-	"ku": "く",
-	"su": "す",
-	"nu": "ぬ",
-	"fu": "ふ",
-	"hu": "ふ",
-	"mu": "む",
-	"yu": "ゆ",
-	"ru": "る",
-	"gu": "ぐ",
-	"zu": "ず",
-	"du": "づ",
-	"bu": "ぶ",
-	"pu": "ぷ"
+	"ku": u"く",
+	"su": u"す",
+	"nu": u"ぬ",
+	"fu": u"ふ",
+	"hu": u"ふ",
+	"mu": u"む",
+	"yu": u"ゆ",
+	"ru": u"る",
+	"gu": u"ぐ",
+	"zu": u"ず",
+	"du": u"づ",
+	"bu": u"ぶ",
+	"pu": u"ぷ"
 }
 
 
@@ -213,8 +213,8 @@ import re
 
 
 def post_trans(word):
-	res = re.sub(ur"ix", "", word)
-	return re.sub(ur"(っ+)(.)", lambda m: (m.group(2) * (1 + len(m.group(1)))), res)
+	res = re.sub(u"ix", "", word)
+	return re.sub(u"(っ+)(.)", lambda m: (m.group(2) * (1 + len(m.group(1)))), res)
 
 def tsu_replace_call(m):
 	c = m.group(1)
@@ -225,7 +225,7 @@ def tsu_replace_call(m):
 		rep_char = u"っ"
 		if c == "n":
 			rep_char = u"ん"
-		nbr = len(m.group())/len(c) - 1
+		nbr = int(len(m.group())/len(c) - 1)
 		return (rep_char * nbr) + c
 
 def tsu_replace(word):
@@ -250,7 +250,7 @@ def post_untrans_call(m):
 	more_than_one = (len(m.group()) > 1)
 	if more_than_one:
 		if key == u"tう":
-			return "つ"
+			return u"つ"
 		key = key[:-1]
 	key += "u"
 	res = ""
@@ -258,10 +258,11 @@ def post_untrans_call(m):
 		res = loneUnTrans[key]
 	if more_than_one:
 		res += u"う"
+
 	return res
 
 def post_untrans(word):
-	return re.sub(ur"[a-z][う]?", post_untrans_call, word)
+	return re.sub(u"[a-z][う]?", post_untrans_call, word)
 
 class Hepburn(L2LTrans):
 
@@ -270,7 +271,7 @@ class Hepburn(L2LTrans):
 
 	@staticmethod
 	def pre_trans(word):
-		return re.sub(ur"([しちじぢ])([ゃぇゅょ])", lambda m: (
+		return re.sub(u"([しちじぢ])([ゃぇゅょ])", lambda m: (
 		(trans_tab[hiragana.index(m.group(1))] + trans_tab[hiragana.index(m.group(2))]).replace("ixy", "")
 		), word)
 
@@ -292,3 +293,42 @@ class Hepburn(L2LTrans):
 
 
 hepburn = Hepburn()
+
+def shiki_pre_trans(word):
+	res = word.replace(u"し", "si").replace(u"ち", "ti").replace(u"つ", "tu")
+	res = res.replace(u"ふ", "hu").replace(u"じ", "zi").replace(u"uぉ", "o")
+	return res.replace(u"uぁ", "a").replace(u"uぃ", "i").replace(u"uぇ", "e")
+
+def shiki_pre_untrans(word):
+	res = word.replace("si", u"し").replace("ti", u"ち").replace("tu", u"つ")
+	return res.replace("hu", u"ふ").replace("zi", u"じ")
+
+class NihonShiki(L2LTrans):
+
+	def __init__(self):
+		L2LTrans.__init__(self, hiragana, trans_tab)
+
+	@staticmethod
+	def pre_trans(word):
+		res = shiki_pre_trans(word)
+		return res.replace(u"ぢ", "di").replace(u"づ", "du")
+
+	def transliterate(self, word):
+		res = NihonShiki.pre_trans(word)
+		res = L2LTrans.transliterate(self, res)
+		return post_trans(res)
+
+	@staticmethod
+	def pre_untrans(word):
+		res = tsu_replace(word)
+		res = shiki_pre_untrans(res)
+		res = res.replace("di", u"ぢ").replace("du", u"づ")
+		return xya2jap(res)
+
+	def untransliterate(self, word):
+		res = NihonShiki.pre_untrans(word)
+		res = L2LTrans.untransliterate(self, res)
+		return post_untrans(res)
+
+
+nihonshiki = NihonShiki()

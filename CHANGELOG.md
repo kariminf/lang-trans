@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.0
+
+* python 3 compatibility
+* japanese nihonshiki
+
 ## 0.5.0
 
 * Add Arabic iso233

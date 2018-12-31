@@ -27,14 +27,22 @@ import pytest
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from lang_trans.japanese import hepburn
+from lang_trans.japanese import hepburn, nihonshiki
 
-ORIG = u'じゃしゃしんいっぱい'
-TRANS = 'jashashinippai'
-UNTRANS = u'じゃしゃしにっぱい'
+ORIG = u"じゃしゃしんいっぱい"
+HEPBURN = "jashashinippai"
+HEPBURN_ORIG = u"じゃしゃしにっぱい"
+NIHONSHIKI = "zyasyasinippai"
+NIHONSHIKI_ORIG = u"じゃしゃしにっぱい"
 
-def test_transliterate():
-	assert hepburn.trans(ORIG) == TRANS
+def test_hepburn_trans():
+	assert hepburn.trans(ORIG) == HEPBURN
 
-def test_untransliterate():
-	assert hepburn.untrans(TRANS) == UNTRANS
+def test_hepburn_untrans():
+	assert hepburn.untrans(HEPBURN) == HEPBURN_ORIG
+
+def test_nihonshiki_trans():
+	assert nihonshiki.trans(ORIG) == NIHONSHIKI
+
+def test_nihonshiki_untrans():
+	assert nihonshiki.untrans(NIHONSHIKI) == NIHONSHIKI_ORIG

@@ -26,15 +26,26 @@ import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from lang_trans.japanese import hepburn
+from lang_trans.japanese import hepburn, nihonshiki
 
-ORIG = u'じゃしゃしんいっぱい'
-TRANS = 'jashashinippai'
-UNTRANS = u'じゃしゃしにっぱい'
+ORIG = u"じゃしゃしんいっぱい"
+HEPBURN = "jashashinippai"
+HEPBURN_ORIG = u"じゃしゃしにっぱい"
+NIHONSHIKI = "zyasyasinippai"
+NIHONSHIKI_ORIG = u"じゃしゃしにっぱい"
 
-print ("hepburn trans of: " + ORIG)
+print (("hepburn trans of: " + ORIG))
 print (hepburn.trans(ORIG))
 print ("")
 
-print ("hepburn untrans of: " + TRANS)
-print (hepburn.untrans(TRANS))
+print ("hepburn untrans of: " + HEPBURN)
+print (hepburn.untrans(HEPBURN))
+print ("")
+
+print (("nihonshiki trans of: " + ORIG))
+print (nihonshiki.trans(ORIG))
+print ("")
+
+print ("nihonshiki untrans of: " + NIHONSHIKI)
+print (hepburn.untrans(NIHONSHIKI))
+print ("")

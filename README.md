@@ -2,7 +2,8 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2-0BDA51.svg?style=plastic)](http://www.apache.org/licenses/LICENSE-2.0)
 [![PyPI](https://img.shields.io/pypi/v/lang-trans.svg?style=plastic)](https://pypi.python.org/pypi/lang-trans)
-![Downloads](https://img.shields.io/pypi/dm/lang-trans.svg?style=plastic)
+[![Downloads](https://img.shields.io/pypi/dm/lang-trans.svg?style=plastic)](https://pypi.org/project/lang-trans/)
+[![Python version](https://img.shields.io/pypi/pyversions/lang-trans.svg?style=plastic)](https://pypi.org/project/lang-trans/)
 [![Travis](https://img.shields.io/travis/kariminf/lang-trans.svg?style=plastic)](https://travis-ci.org/kariminf/lang-trans)
 [![Codecov](https://img.shields.io/codecov/c/github/kariminf/lang-trans.svg?style=plastic)](https://codecov.io/gh/kariminf/lang-trans)
 
@@ -28,17 +29,20 @@ abbreviated methods:
 ## Available transliterators
 
 - arabic
-  - buckwalter
+    - buckwalter
+    - arabtex
+    - iso233
 
 - japanese
-  - hepburn
+    - hepburn
+    - nihonshiki
 
 ## Similar projects
 
 
 ## License
 
-Copyright (C) 2017 Abdelkrime Aries (kariminfo0@gmail.com)
+Copyright (C) 2017-2018 Abdelkrime Aries (kariminfo0@gmail.com)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
