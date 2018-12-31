@@ -13,7 +13,7 @@ install:
   - pip install pytest-cov
 
 script:
-  - py.test --cov=lang-trans tests/*.py
+  - py.test --cov=lang_trans tests/*.py
 
 after_success:
   - codecov

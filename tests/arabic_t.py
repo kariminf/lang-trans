@@ -27,13 +27,20 @@ import pytest
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from lang_trans.arabic import buckwalter
+from lang_trans.arabic import buckwalter, arabtex
 
 ORIG = u'هذا البرنامج يعطينا نطق الحروف'
-TRANS = 'h*A AlbrnAmj yETynA nTq AlHrwf'
+BUCKWALTER = 'h*A AlbrnAmj yETynA nTq AlHrwf'
+ARABTEX = 'h_dA AlbrnAmj y`.tynA n.tq Al.hrwf'
 
-def test_transliterate():
-    assert buckwalter.transliterate(ORIG) == TRANS
+def test_buckwalter_trans():
+	assert buckwalter.trans(ORIG) == BUCKWALTER
 
-def test_untransliterate():
-    assert buckwalter.untransliterate(TRANS) == ORIG
+def test_buckwalter_untrans():
+	assert buckwalter.untrans(BUCKWALTER) == ORIG
+
+def test_arabtex_trans():
+	assert arabtex.trans(ORIG) == ARABTEX
+
+def test_arabtex_untrans():
+	assert arabtex.untrans(ARABTEX) == ORIG
