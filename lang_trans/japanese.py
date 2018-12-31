@@ -183,7 +183,7 @@ trans_tab = [ # https://en.wikipedia.org/wiki/Hepburn_romanization
 	"u",
 	"e",
 	"o",
-	"n",
+	"n'",
 	"xya",
 	"xye",
 	"xyu",
@@ -214,6 +214,7 @@ import re
 
 def post_trans(word):
 	res = re.sub(u"ix", "", word)
+	res = re.sub("n'([^aeyuio])", "n\1", res)
 	return re.sub(u"(っ+)(.)", lambda m: (m.group(2) * (1 + len(m.group(1)))), res)
 
 def tsu_replace_call(m):
@@ -294,41 +295,32 @@ class Hepburn(L2LTrans):
 
 hepburn = Hepburn()
 
-def shiki_pre_trans(word):
-	res = word.replace(u"し", "si").replace(u"ち", "ti").replace(u"つ", "tu")
-	res = res.replace(u"ふ", "hu").replace(u"じ", "zi").replace(u"uぉ", "o")
-	return res.replace(u"uぁ", "a").replace(u"uぃ", "i").replace(u"uぇ", "e")
+class Shiki(L2LTrans):
 
-def shiki_pre_untrans(word):
-	res = word.replace("si", u"し").replace("ti", u"ち").replace("tu", u"つ")
-	return res.replace("hu", u"ふ").replace("zi", u"じ")
-
-class NihonShiki(L2LTrans):
-
-	def __init__(self):
+	def __init__(self, src_tab, dst_tab):
 		L2LTrans.__init__(self, hiragana, trans_tab)
+		src = [u"し", u"ち", u"つ", u"ふ", u"じ"]
+		dst = ["si", "ti", "tu", "hu", "zi"]
+		self.spec_trans = L2LTrans(src + src_tab, dst + dst_tab)
 
-	@staticmethod
-	def pre_trans(word):
-		res = shiki_pre_trans(word)
-		return res.replace(u"ぢ", "di").replace(u"づ", "du")
+	def pre_trans(self, word):
+		res = word.replace(u"uぉ", "o").replace(u"uぁ", "a").replace(u"uぃ", "i").replace(u"uぇ", "e")
+		return self.spec_trans.trans(res)
 
 	def transliterate(self, word):
-		res = NihonShiki.pre_trans(word)
+		res = self.pre_trans(word)
 		res = L2LTrans.transliterate(self, res)
 		return post_trans(res)
 
-	@staticmethod
-	def pre_untrans(word):
+	def pre_untrans(self, word):
 		res = tsu_replace(word)
-		res = shiki_pre_untrans(res)
-		res = res.replace("di", u"ぢ").replace("du", u"づ")
+		res = self.spec_trans.untrans(res)
 		return xya2jap(res)
 
 	def untransliterate(self, word):
-		res = NihonShiki.pre_untrans(word)
+		res = self.pre_untrans(word)
 		res = L2LTrans.untransliterate(self, res)
 		return post_untrans(res)
 
-
-nihonshiki = NihonShiki()
+nihonshiki = Shiki([u"ぢ", u"づ"], ["di", "du"])
+kunreishiki = Shiki([u"ぢ"], ["zi"])

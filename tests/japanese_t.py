@@ -29,9 +29,9 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from lang_trans.japanese import hepburn, nihonshiki
 
 ORIG = u"じゃしゃしんいっぱい"
-HEPBURN = "jashashinippai"
+HEPBURN = "jashashin'ippai"
 HEPBURN_ORIG = u"じゃしゃしにっぱい"
-NIHONSHIKI = "zyasyasinippai"
+NIHONSHIKI = "zyasyasin'ippai"
 NIHONSHIKI_ORIG = u"じゃしゃしにっぱい"
 
 print (("hepburn trans of: " + ORIG))

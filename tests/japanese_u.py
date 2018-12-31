@@ -30,10 +30,10 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from lang_trans.japanese import hepburn, nihonshiki
 
 ORIG = u"じゃしゃしんいっぱい"
-HEPBURN = "jashashinippai"
-HEPBURN_ORIG = u"じゃしゃしにっぱい"
-NIHONSHIKI = "zyasyasinippai"
-NIHONSHIKI_ORIG = u"じゃしゃしにっぱい"
+HEPBURN = "jashashin'ippai"
+HEPBURN_ORIG = u"じゃしゃしんいっぱい"
+NIHONSHIKI = "zyasyasin'ippai"
+NIHONSHIKI_ORIG = u"じゃしゃしんいっぱい"
 
 def test_hepburn_trans():
 	assert hepburn.trans(ORIG) == HEPBURN

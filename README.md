@@ -36,6 +36,7 @@ abbreviated methods:
 - japanese
     - hepburn
     - nihonshiki
+    - kunreishiki
 
 ## Similar projects
 
