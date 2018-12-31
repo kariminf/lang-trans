@@ -23,7 +23,6 @@
 #
 import os
 import sys
-import pytest
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -33,22 +32,27 @@ ORIG = u'هذا البرنامج يعطينا نطق الحروف'
 BUCKWALTER = 'h*A AlbrnAmj yETynA nTq AlHrwf'
 ARABTEX = 'h_dA AlbrnAmj y`.tynA n.tq Al.hrwf'
 ISO233 = u'hḏʾ ʾlbrnʾmǧ yʿṭynʾ nṭq ʾlḥrwf'
-ORIG_iso233 = u'هذٱ ٱلبرنٱمج يعطينٱ نطق ٱلحروف'
 
-def test_buckwalter_trans():
-	assert buckwalter.trans(ORIG) == BUCKWALTER
+print "buckwalter trans of: " + ORIG
+print buckwalter.trans(ORIG)
+print
 
-def test_buckwalter_untrans():
-	assert buckwalter.untrans(BUCKWALTER) == ORIG
+print "buckwalter untrans of: " + BUCKWALTER
+print buckwalter.untrans(BUCKWALTER)
+print
 
-def test_arabtex_trans():
-	assert arabtex.trans(ORIG) == ARABTEX
+print "arabtex trans of: " + ORIG
+print arabtex.trans(ORIG)
+print
 
-def test_arabtex_untrans():
-	assert arabtex.untrans(ARABTEX) == ORIG
+print "arabtex untrans of: " + ARABTEX
+print arabtex.untrans(ARABTEX)
+print
 
-def test_iso233_trans():
-	assert iso233.trans(ORIG) == ISO233
+print "iso233 trans of: " + ORIG
+print iso233.trans(ORIG)
+print
 
-def test_iso233_untrans():
-	assert iso233.untrans(ISO233) == ORIG_iso233
+print "iso233 untrans of: " + ISO233
+print iso233.untrans(ISO233)
+print
