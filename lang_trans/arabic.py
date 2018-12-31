@@ -22,7 +22,7 @@
 # limitations under the License.
 #
 
-trans =	{
+trans_map =	{
 		u"\u0627": "A", # alif
 		u"\u0628": "b", # ba
 		u"\u062A": "t", # ta
@@ -76,30 +76,11 @@ trans =	{
 		u"\u0652": "o", # sukun
 }
 
-from lang_trans import Transliteration
+from lang_trans import MapTransliterator
 
-class Buckwalter(Transliteration):
+class Buckwalter(MapTransliterator):
 
 	def __init__(self):
-		pass
-
-	def transliterate(self, word):
-		res = ""
-		if len(word) < len(trans):
-			for char in word:
-				res += trans.get(char, char)
-		else:
-			res = word
-			for k,v in trans.items():
-				res = res.replace(k, v)
-
-		return res
-
-	def untransliterate(self, word):
-		res = word
-		for k,v in trans.items():
-			res = res.replace(v, k)
-
-		return res
+		MapTransliterator.__init__(self, trans_map)
 
 buckwalter = Buckwalter()

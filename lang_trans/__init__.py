@@ -22,6 +22,7 @@
 # limitations under the License.
 #
 
+
 import sys
 import abc
 
@@ -30,21 +31,63 @@ if sys.version_info >= (3, 4):
 else:
     ABC = abc.ABCMeta('ABC', (), {})
 
-class Transliteration(ABC):
+class Transliterator(ABC):
 
 	def __init__(self):
 		pass
 
-    def trans(self, word):
-        return self.transliterate(word)
+	def trans(self, word):
+		return self.transliterate(word)
 
 	@abc.abstractmethod
 	def transliterate(self, word):
 		return word
 
-    def untrans(self, word):
-        return self.untransliterate(word)
+	def untrans(self, word):
+		return self.untransliterate(word)
 
 	@abc.abstractmethod
 	def untransliterate(self, word):
 		return word
+
+class MapTransliterator(Transliterator):
+
+    def __init__(self, the_map):
+		self.the_map = the_map
+
+    def transliterate(self, word):
+		res = ""
+		if len(word) < len(self.the_map):
+			for char in word:
+				res += self.the_map.get(char, char)
+		else:
+			res = word
+			for k,v in self.the_map.items():
+				res = res.replace(k, v)
+
+		return res
+
+    def untransliterate(self, word):
+		res = word
+		for k,v in self.the_map.items():
+			res = res.replace(v, k)
+
+		return res
+
+class List2ListTransliterator(Transliterator):
+
+    def __init__(self, src, dst):
+		self.src = src
+        self.dst = dst
+
+    def transliterate(self, word):
+		res = word
+        for i, v in enumerate(self.src):
+            res = res.replace(v, self.dst[i])
+		return res
+
+    def untransliterate(self, word):
+		res = word
+		for i, v in enumerate(self.dst):
+            res = res.replace(v, self.src[i])
+		return res

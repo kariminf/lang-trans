@@ -21,6 +21,10 @@ print buckwalter.transliterate(u'هذا البرنامج يعطينا نطق ا�
 print buckwalter.untransliterate('h*A AlbrnAmj yETynA nTq AlHrwf')
 ```
 
+abbreviated methods:
+- transliterate(text): trans(text)
+- untransliterate(text): untrans(text)
+
 ## Available transliterators
 
 - arabic
