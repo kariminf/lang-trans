@@ -3,7 +3,7 @@
 ## 0.6.0
 
 * python 3 compatibility
-* japanese nihonshiki
+* japanese nihonshiki, kunreishiki (partial)
 
 ## 0.5.0
 
