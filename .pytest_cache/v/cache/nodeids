@@ -1,4 +1,0 @@
-[
-  "tests/japanese_t.py::test_transliterate", 
-  "tests/japanese_t.py::test_untransliterate"
-]

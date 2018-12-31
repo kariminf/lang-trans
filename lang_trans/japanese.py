@@ -210,12 +210,11 @@ loneUnTrans = {
 
 from lang_trans import L2LTrans
 import re
-from six import u
 
 
 def post_trans(word):
-	res = re.sub(u(r"ix"), "", word)
-	return re.sub(u(r"(っ+)(.)"), lambda m: (m.group(2) * (1 + len(m.group(1)))), res)
+	res = re.sub(ur"ix", "", word)
+	return re.sub(ur"(っ+)(.)", lambda m: (m.group(2) * (1 + len(m.group(1)))), res)
 
 def tsu_replace_call(m):
 	c = m.group(1)
@@ -258,11 +257,11 @@ def post_untrans_call(m):
 	if key in loneUnTrans:
 		res = loneUnTrans[key]
 	if more_than_one:
-		res += "う"
+		res += u"う"
 	return res
 
 def post_untrans(word):
-	return re.sub(u(r"[a-z][う]?"), post_untrans_call, word)
+	return re.sub(ur"[a-z][う]?", post_untrans_call, word)
 
 class Hepburn(L2LTrans):
 
@@ -271,8 +270,8 @@ class Hepburn(L2LTrans):
 
 	@staticmethod
 	def pre_trans(word):
-		return re.sub(u(r"([しちじぢ])([ゃぇゅょ])"), lambda m: (
-		(trans_tab[hiragana.index(m.group(1))] + trans_tab[hiragana.index(m.group(2))]).replace(u("ixy"), "")
+		return re.sub(ur"([しちじぢ])([ゃぇゅょ])", lambda m: (
+		(trans_tab[hiragana.index(m.group(1))] + trans_tab[hiragana.index(m.group(2))]).replace("ixy", "")
 		), word)
 
 	def transliterate(self, word):

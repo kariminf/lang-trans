@@ -31,6 +31,7 @@ if sys.version_info >= (3, 4):
 else:
 	ABC = abc.ABCMeta('ABC', (), {})
 
+
 class Trans(ABC):
 
 	def __init__(self):

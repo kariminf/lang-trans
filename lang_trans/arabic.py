@@ -78,46 +78,46 @@ buckwalter_map =	{
 
 
 iso233_map =	{
-		u"ا": "ʾ", # alif
-		u"ب": "b", # ba
-		u"ت": "t", # ta
-		u"ث": "ṯ", # tha
-		u"ج": "ǧ", # jim
-		u"ح": "ḥ", # Ḥa
-		u"خ": "ẖ", # kha
-		u"د": "d", # dal
-		u"ذ": "ḏ", # dhal
-		u"ر": "r", # ra
-		u"ز": "z", # zin
-		u"س": "s", # sin
-		u"ش": "š", # shin
-		u"ص": "ṣ", # ṣad
-		u"ض": "ḍ", # Ḍad
-		u"ط": "ṭ", # Ṭa
-		u"ظ": "ẓ", # Ẓa
-		u"ع": "ʿ", # 'Ayn
-		u"غ": "ġ", # ghayn
-		u"ف": "f", # fa
-		u"ق": "q", # qaf
-		u"ك": "k", # kaf
-		u"ل": "l", # lam
-		u"م": "m", # mim
-		u"ن": "n", # nun
-		u"ه": "h", # ha
-		u"و": "w", # waw
-		u"ي": "y", # ya
+		u"ا": u"ʾ", # alif
+		u"ب": u"b", # ba
+		u"ت": u"t", # ta
+		u"ث": u"ṯ", # tha
+		u"ج": u"ǧ", # jim
+		u"ح": u"ḥ", # Ḥa
+		u"خ": u"ẖ", # kha
+		u"د": u"d", # dal
+		u"ذ": u"ḏ", # dhal
+		u"ر": u"r", # ra
+		u"ز": u"z", # zin
+		u"س": u"s", # sin
+		u"ش": u"š", # shin
+		u"ص": u"ṣ", # ṣad
+		u"ض": u"ḍ", # Ḍad
+		u"ط": u"ṭ", # Ṭa
+		u"ظ": u"ẓ", # Ẓa
+		u"ع": u"ʿ", # 'Ayn
+		u"غ": u"ġ", # ghayn
+		u"ف": u"f", # fa
+		u"ق": u"q", # qaf
+		u"ك": u"k", # kaf
+		u"ل": u"l", # lam
+		u"م": u"m", # mim
+		u"ن": u"n", # nun
+		u"ه": u"h", # ha
+		u"و": u"w", # waw
+		u"ي": u"y", # ya
 		#hamza
-		u"ء": "ˌ", # lone hamza
-		u"أ": "ˈ", # hamza on alif
-		u"إ": "ʾ", # hamza below alif
-		u"ؤ": "ˈ", # hamza on waw
-		u"ئ": "ˈ", # hamza on ya
+		u"ء": u"ˌ", # lone hamza
+		u"أ": u"ˈ", # hamza on alif
+		u"إ": u"ʾ", # hamza below alif
+		u"ؤ": u"ˈ", # hamza on waw
+		u"ئ": u"ˈ", # hamza on ya
 		#alif
-		u"\u0622": "ʾ", # madda on alif
-		u"\u0671": "ʾ", # alif alwasla
-		u"\u0670": "ʾ", # dagger alif
-		u"ى": "ỳ", # alif maqsura
-		u"ة": "ẗ", # ta marbuta
+		u"\u0622": u"ʾ", # madda on alif
+		u"\u0671": u"ʾ", # alif alwasla
+		u"\u0670": u"ʾ", # dagger alif
+		u"ى": u"ỳ", # alif maqsura
+		u"ة": u"ẗ", # ta marbuta
 }
 
 arabic = [

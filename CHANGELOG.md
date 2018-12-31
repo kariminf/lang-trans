@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0
+
+* Add Arabic iso233
+
+## 0.4.0
+
+* Add Arabic arabtex
+
 ## 0.3.0
 
 * Add Japanese hepburn
